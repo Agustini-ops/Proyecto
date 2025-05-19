@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario - Modelo de la ONU 2025</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html" class="cta-link">← Volver al inicio</a>
+    </div>
+    <h1 style="text-align: center; width: 100%;">Formulario de Participación</h1>
+  </header>
+
+  <section class="section">
+    <p>Rellena el siguiente formulario para inscribirte en el Modelo de las Naciones Unidas 2025.</p>
+
+    <form action="/enviar" method="post" class="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="apellido">Apellidos:</label>
+      <input type="text" id="apellido" name="apellido" required>
+
+      <label for="grado">Grado:</label>
+      <select id="grado" name="grado" required onchange="toggleGrados()">
+        <option value="">Selecciona tu grado</option>
+        <option value="primer_grado">1°</option>
+        <option value="segundo_grado">2°</option>
+        <option value="tercer_grado">3°</option>
+      </select>
+
+      <div id="grupos_primero" style="display: none;">
+        <label for="grupos_1">Grupo:</label>
+        <select id="grupos_1" name="grupos">
+          <option value="">Selecciona tu grupo</option>
+          <option value="grupo_a">A</option>
+          <option value="grupo_b">B</option>
+          <option value="grupo_c">C</option>
+        </select>
+      </div>
+
+      <div id="grupos_segundo" style="display: none;">
+        <label for="grupos_2">Grupo:</label>
+        <select id="grupos_2" name="grupos">
+          <option value="">Selecciona tu grupo</option>
+          <option value="grupo_a">A</option>
+          <option value="grupo_b">B</option>
+        </select>
+      </div>
+
+      <div id="grupos_tercero" style="display: none;">
+        <label for="grupos_3">Grupo:</label>
+        <select id="grupos_3" name="grupos">
+          <option value="">Selecciona tu grupo</option>
+          <option value="grupo_a">A</option>
+          <option value="grupo_b">B</option>
+          <option value="grupo_c">C</option>
+        </select>
+      </div>
+
+      <label for="rol">Rol:</label>
+      <select id="rol" name="rol" required onchange="toggleNacion()">
+        <option value="">Seleccione un rol</option>
+        <option value="delegado">Delegado</option>
+        <option value="presidente_mesa">Presidente de Mesa</option>
+        <option value="secretario_general">Secretario General</option>
+        <option value="observador">Observador</option>
+        <option value="prensa">Prensa</option>
+        <option value="moderador">Moderador</option>
+      </select>
+
+      <div id="paisContainer" style="display: none;">
+        <label for="pais">País que representa:</label>
+        <input type="text" id="pais" name="pais" placeholder="Escriba el país" />
+      </div>
+
+      <label for="mesa">N° de mesa:</label>
+      <input type="text" id="mesa" name="mesa" required>
+
+      <div class="cta">
+        <button type="submit" class="btn">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Modelo de las Naciones Unidas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

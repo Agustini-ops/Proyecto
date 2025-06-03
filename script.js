@@ -11,6 +11,21 @@ function toggleGrados() {
     document.getElementById("grupos_tercero").style.display = grado === "tercer_grado" ? "block" : "none";
 }
 
-document.querySelector('.btn').addEventListener('click', function () {
-    alert("Por favor completa tu registro para tu participación. Muchas gracias");
+document.querySelector('.btn').addEventListener('click', function (e) {
+    e.preventDefault(); // evita que el formulario se envíe automáticamente
+    var nombre = document.getElementById("nombre").value.trim();
+    var apellido = document.getElementById("apellido").value.trim();
+    var grado = document.getElementById("grado").value;
+    var rol = document.getElementById("rol").value;
+    var mesa = document.getElementById("mesa").value.trim();
+    var pais = document.getElementById("pais") ? document.getElementById("pais").value.trim() : "";
+    // validación básica
+    if (!nombre || !apellido || !grado || !rol || !mesa || (rol === "delegado" && !pais)) {
+        alert("Por favor, completa todos los campos obligatorios antes de enviar.");
+        return; // detiene el envío si hay campos vacíos
+    }
+    // mensaje de éxito
+    alert("¡Gracias por registrarte! Tus datos han sido enviados correctamente.");
+
+    window.location.href = "index.html";
 });
